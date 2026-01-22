@@ -141,28 +141,42 @@
     }
 
     .buttons {
-      display: flex;
-      justify-content: space-around;
-      margin: 25px 0;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
+  flex-wrap: wrap;
+  gap: 14px;
+  position: relative;
+  z-index: 20;
+}
+
 
     .btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 90px;
-      height: 90px;
-      background: #ff7ba2;
-      border-radius: 50%;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.3s, background 0.3s;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 90px;
+  height: 90px;
+
+  background: #ff7ba2;
+  border-radius: 50%;
+
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+
+  position: relative;
+  z-index: 30;
+
+  touch-action: manipulation;
+}
+
 
     .btn:hover {
       transform: scale(1.1);
@@ -170,15 +184,16 @@
     }
 
     .btn i {
-      font-size: 2rem;
-      margin-bottom: 5px;
-    }
+  font-size: 2rem;
+  margin-bottom: 5px;
+  pointer-events: none;
+}
 
     .btn span {
-      font-size: 0.7rem;
-      text-align: center;
-      word-break: break-word;
-    }
+  font-size: 0.7rem;
+  text-align: center;
+  pointer-events: none;
+}
 
     .carousel {
       margin: 20px 0;
@@ -288,6 +303,30 @@
         height: 180px;
       }
     }
+	@media (max-width: 500px) {
+  .buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 85%;
+    height: auto;
+    padding: 14px 0;
+    border-radius: 14px;
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .btn i {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+  }
+
+  .btn span {
+    font-size: 0.9rem;
+  }
+}
+
   </style>
   <!-- Ícones via Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -330,7 +369,7 @@
           <i class="fa-solid fa-check"></i>
           <span>CONFIRMAR PRESENÇA</span>
         </a>
-        <a href="http://www.contate.me/5567992241355" target="_blank" class="btn">
+        <a href="https://wa.me/5567992241355" target="_blank" class="btn">
           <i class="fa-brands fa-whatsapp"></i>
           <span>WHATSAPP</span>
         </a>
