@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kassiany Julia - 16 Anos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    <!-- body { -->
+      <!-- background: linear-gradient(135deg, #e4cfff, #d8b7ff); -->
+      <!-- min-height: 100vh; -->
+      <!-- display: flex; -->
+      <!-- justify-content: center; -->
+      <!-- align-items: center; -->
+      <!-- padding: 20px; -->
+      <!-- overflow-x: hidden; -->
+    <!-- } -->
+	
+		body {
+		  background-image: url('Kassiany/fundo-aniversario.png');
+		  background-size: cover;
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+
+		  min-height: 100vh;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  padding: 20px;
+		  overflow-x: hidden;
+		}
+
+    .invite-card {
+      width: 100%;
+      max-width: 500px;
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuOSIvPjwvc3ZnPg==') repeat;
+      background-size: 100% 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+      padding: 30px;
+      text-align: center;
+      color: #e85a8a;
+      font-weight: 500;
+	  background-color: rgba(255, 255, 255, 0.92);
+    }
+
+    .paper-bg {
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiM5OTk5OTkiIG9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==');
+      background-size: cover;
+      padding: 20px;
+      border-radius: 15px;
+      position: relative;
+    }
+
+    .sparkles {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: #ff6b9f;
+    }
+
+    .sparkles-left {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 24px;
+      color: #ff6b9f;
+    }
+
+    h1 {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 2.8rem;
+      margin: 10px 0;
+      color: #e85a8a;
+    }
+
+    .age {
+      font-size: 1.8rem;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .age::before,
+    .age::after {
+      content: "♥";
+      font-size: 1.2rem;
+      color: #ff9eb1;
+    }
+
+    .divider {
+      width: 60%;
+      height: 3px;
+      background: linear-gradient(to right, transparent, #e85a8a, transparent);
+      margin: 15px auto;
+      position: relative;
+    }
+
+    .divider::before {
+      content: "♥";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ff9eb1;
+      font-size: 0.8rem;
+    }
+
+    .date-time {
+      font-size: 1.6rem;
+      font-family: 'Brush Script MT', cursive;
+      margin: 15px 0;
+    }
+
+    .location {
+      font-size: 1rem;
+      margin: 20px 0;
+      line-height: 1.4;
+    }
+
+    .info {
+      font-size: 0.9rem;
+      margin: 20px 0;
+      text-align: left;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      border-left: 4px solid #e85a8a;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+      margin: 25px 0;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 90px;
+      height: 90px;
+      background: #ff7ba2;
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s, background 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: #ff5a8f;
+    }
+
+    .btn i {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    .btn span {
+      font-size: 0.7rem;
+      text-align: center;
+      word-break: break-word;
+    }
+
+    .carousel {
+      margin: 20px 0;
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.8s ease-in-out;
+      height: 100%;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      z-index: 10;
+    }
+
+    .carousel-btn {
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 18px;
+      color: #e85a8a;
+      transition: all 0.3s;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(255, 255, 255, 0.9);
+      transform: scale(1.1);
+    }
+
+    .carousel-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      z-index: 10;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .carousel-dot.active {
+      background: #ff6b9f;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #666;
+      text-align: center;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      .age {
+        font-size: 1.4rem;
+      }
+      .date-time {
+        font-size: 1.3rem;
+      }
+      .btn {
+        width: 70px;
+        height: 70px;
+        font-size: 0.7rem;
+      }
+      .btn i {
+        font-size: 1.5rem;
+      }
+      .carousel {
+        height: 180px;
+      }
+    }
+  </style>
+  <!-- Ícones via Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="invite-card">
+    <div class="paper-bg">
+
+      <div class="sparkles">✨✨</div>
+      <div class="sparkles-left">✨✨</div>
+
+      <h1>Kassiany Julia</h1>
+      <div class="age">16 anos</div>
+      <div class="divider"></div>
+      <div class="date-time">21/02 às 19h</div>
+
+      <div class="location">
+        Rua São Martinho, nº 48<br>
+        Vila Progresso
+      </div>
+
+      <div class="info">
+        🍽️ Cada convidado deverá trazer seu prato e talheres<br>
+        🥤 Trazer o que for beber<br>
+        🏊‍♀️ Se for usar a piscina, não esqueça de trazer toalha
+      </div>
+
+      <p style="margin: 15px 0; font-style: italic;">
+        Será uma noite especial, preparada com carinho,<br>
+        e sua presença vai deixar tudo ainda melhor ✨
+      </p>
+
+      <div class="buttons">
+        <a href="https://maps.app.goo.gl/Rjamc17UDDFCvdeb8" target="_blank" class="btn">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>COMO CHEGAR</span>
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrcnzItqn0YW2P-LUukG_eQMR5R1q1jpgcXQYvlJb8o1ZhUw/viewform?usp=dialog" target="_blank" class="btn">
+          <i class="fa-solid fa-check"></i>
+          <span>CONFIRMAR PRESENÇA</span>
+        </a>
+        <a href="http://www.contate.me/5567992241355" target="_blank" class="btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WHATSAPP</span>
+        </a>
+      </div>
+
+      <div class="carousel">
+        <div class="carousel-inner" id="carouselInner">
+          <!-- As fotos serão inseridas aqui pelo JavaScript -->
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn prev-btn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn next-btn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="carousel-dots" id="carouselDots">
+          <!-- Os pontos serão inseridos aqui pelo JavaScript -->
+        </div>
+      </div>
+
+      <div class="footer">
+        Com amor, família de Kassiany Julia ❤️
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Lista de fotos (substitua pelos links reais das fotos)
+    const photos = [
+      "Kassiany/Kassiany_01.jpeg",
+      "Kassiany/Kassiany_02.jpeg",
+      "Kassiany/Kassiany_03.jpeg",  
+	  "Kassiany/Kassiany_07.jpeg"
+    ];
+
+    // Para testes, você pode usar estas imagens de exemplo se as suas não carregarem:
+    // const photos = [
+    //   "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    //   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    //   "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    //   "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    // ];
+
+    const carouselInner = document.getElementById('carouselInner');
+    const carouselDots = document.getElementById('carouselDots');
+    let currentIndex = 0;
+    let autoSlideInterval;
+
+    // Criar itens do carrossel
+    photos.forEach((photo, index) => {
+      // Criar item do carrossel
+      const item = document.createElement('div');
+      item.className = 'carousel-item';
+      item.style.backgroundImage = `url('${photo}')`;
+      carouselInner.appendChild(item);
+
+      // Criar pontos de navegação
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot';
+      dot.dataset.index = index;
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(index));
+      carouselDots.appendChild(dot);
+    });
+
+    // Atualizar a posição do carrossel
+    function updateCarousel() {
+      carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+      
+      // Atualizar pontos ativos
+      document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+
+    // Ir para um slide específico
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+      resetAutoSlide();
+    }
+
+    // Próximo slide
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % photos.length;
+      updateCarousel();
+    }
+
+    // Slide anterior
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+      updateCarousel();
+    }
+
+    // Configurar slides automáticos
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, 4000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+
+    // Configurar eventos dos botões
+    document.querySelector('.next-btn').addEventListener('click', () => {
+      nextSlide();
+      resetAutoSlide();
+    });
+
+    document.querySelector('.prev-btn').addEventListener('click', () => {
+      prevSlide();
+      resetAutoSlide();
+    });
+
+    // Iniciar o carrossel
+    updateCarousel();
+    startAutoSlide();
+
+    // Pausar auto-slide quando o mouse estiver sobre o carrossel
+    document.querySelector('.carousel').addEventListener('mouseenter', () => {
+      clearInterval(autoSlideInterval);
+    });
+
+    document.querySelector('.carousel').addEventListener('mouseleave', () => {
+      startAutoSlide();
+    });
+
+    // Verificar se as imagens carregaram, caso contrário mostrar mensagem
+    window.addEventListener('load', () => {
+      const items = document.querySelectorAll('.carousel-item');
+      items.forEach((item, index) => {
+        const img = new Image();
+        img.src = photos[index];
+        img.onerror = () => {
+          item.style.background = 'linear-gradient(135deg, #ff9eb1, #e85a8a)';
+          item.style.display = 'flex';
+          item.style.alignItems = 'center';
+          item.style.justifyContent = 'center';
+          item.style.color = 'white';
+          item.style.fontSize = '1rem';
+          item.innerHTML = `<div>Foto ${index + 1}<br><small>Carregando...</small></div>`;
+        };
+      });
+    });
+
+  </script>
+
+</body>
+</html>
